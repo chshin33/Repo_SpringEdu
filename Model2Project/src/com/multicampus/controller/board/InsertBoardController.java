@@ -30,3 +30,11 @@ public class InsertBoardController implements Controller {
 	}
 
 }
+
+
+
+
+
+
+
+

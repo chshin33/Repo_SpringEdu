@@ -25,7 +25,12 @@ public class GetBoardListController implements Controller {
 		HttpSession session = request.getSession();
 		session.setAttribute("boardList", boardList);
 		return "getBoardList.jsp";
-		
 	}
 
 }
+
+
+
+
+
+

@@ -8,7 +8,7 @@ import com.multicampus.controller.board.GetBoardController;
 import com.multicampus.controller.board.GetBoardListController;
 import com.multicampus.controller.board.InsertBoardController;
 import com.multicampus.controller.board.UpdateBoardController;
-import com.multicampus.user.LoginController;
+import com.multicampus.controller.user.LoginController;
 
 public class HandlerMapping {
 	private Map<String, Controller> mappings;
