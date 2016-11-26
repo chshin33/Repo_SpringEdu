@@ -15,7 +15,7 @@ public class BoardServiceClient {
 		vo.setTitle("iBatis 예제");
 		vo.setWriter("채규태");
 		vo.setContent("iBatis 예제.....");		
-		//boardDAO.insertBoard(vo);
+//		boardDAO.insertBoard(vo);
 		
 		vo.setSearchCondition("TITLE");
 		vo.setSearchKeyword("");

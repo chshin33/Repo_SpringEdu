@@ -2,8 +2,6 @@ package com.multicampus.biz.board;
 
 import java.sql.Date;
 
-import javax.xml.bind.annotation.XmlTransient;
-
 public class BoardVO {
 	private int seq;
 	private String title;

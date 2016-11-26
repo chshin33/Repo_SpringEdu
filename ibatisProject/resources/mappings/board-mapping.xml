@@ -45,11 +45,11 @@
 	
 	<select id="getBoardList" resultMap="boardResult">
 		select * 
-		from board b, users u
+		from board 
 		where title like '%'||#searchKeyword#||'%' 
 		order by seq desc
 	</select>
-	
+		
 </sqlMap>
 
 
