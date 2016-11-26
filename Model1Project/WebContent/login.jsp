@@ -7,7 +7,7 @@
 </head>
 <body>
 <center>
-<h1><font color="green">로그인(아이디/비번 모두 test 또는 aaa 입력)</font></h1>
+<h1><font color="green">로그인</font></h1>
 <hr>
 <form action="login_proc.jsp" method="post">
 	<table border="1" cellpadding="0" cellspacing="0">

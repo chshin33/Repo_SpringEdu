@@ -47,7 +47,6 @@
 	<th bgcolor="orange" width="100">번호</th>
 	<th bgcolor="orange" width="200">제목</th>
 	<th bgcolor="orange" width="150">작성자</th>
-	<th bgcolor="orange" width="150">내용</th>
 	<th bgcolor="orange" width="150">등록일</th>
 	<th bgcolor="orange" width="100">조회수</th>
 </tr>
@@ -57,7 +56,6 @@
 	<td><%= board.getSeq() %></td>
 	<td align="left"><a href="getBoard.jsp?seq=<%= board.getSeq() %>"><%= board.getTitle() %></a></td>
 	<td><%= board.getWriter() %></td>
-	<td><%= board.getContent() %></td>
 	<td><%= board.getRegDate() %></td>
 	<td><%= board.getCnt() %></td>
 </tr>
