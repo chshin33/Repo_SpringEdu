@@ -31,7 +31,20 @@
 	<bean id="txManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource"></property>
 	</bean>
-
+	
+	<tx:advice id="txAdvice" transaction-manager="txManager">
+		<tx:attributes>
+			<tx:method name="*" rollback-for="Exception"/>
+		</tx:attributes>
+	</tx:advice>
+	
+	<aop:config>
+		<aop:pointcut id="txPointcut" expression="execution(* com.multicampus.biz..*Impl.*(..))"/>
+		
+		<aop:advisor pointcut-ref="txPointcut" 
+		             advice-ref="txAdvice"/>
+	</aop:config>
+	
 	<!-- Spring과 Ibatis 연동 설정 -->
 	<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
 		<property name="configLocation" value="classpath:sql-map-config.xml"></property>
@@ -49,22 +62,8 @@
 	</bean>
 	
 	<bean class="org.mybatis.spring.SqlSessionTemplate">
-		<constructor-arg ref="sqlSession"></constructor-arg><!--Setter 인젝션을 지원하지 않는다. 생성자 인젝션으로처리  -->
-	</bean>	
-		
-	<!-- AOP설정 -->	
-	<tx:advice id="txAdvice" transaction-manager="txManager">
-		<tx:attributes>
-			<tx:method name="*" rollback-for="Exception"/>
-		</tx:attributes>
-	</tx:advice>
-	
-	<aop:config>
-		<aop:pointcut id="txPointcut" expression="execution(* com.multicampus.biz..*Impl.*(..))"/>
-		
-		<aop:advisor pointcut-ref="txPointcut" 
-		             advice-ref="txAdvice"/>
-	</aop:config>
+		<constructor-arg ref="sqlSession"></constructor-arg>
+	</bean>
 	
 	<!-- 횡단관점에 해당하는 Advice 등록 
 	<bean id="log"            class="com.multicampus.biz.common.LogAdvice"></bean>

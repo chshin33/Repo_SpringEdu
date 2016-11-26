@@ -6,6 +6,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class BoardServiceClient {
+		
 	public static void main(String[] args) {
 		// 1. Spring IoC 컨테이너 구동
 		ApplicationContext container = new ClassPathXmlApplicationContext("applicationContext.xml");

@@ -1,56 +1,55 @@
-<%@page contentType="text/html; charset=UTF-8"%>
-<%@taglib uri="http://www.springframework.org/tags" prefix="spring" %> 
+<%@page contentType="text/html; charset=EUC-KR"%> 
 
 <!-- 
-	EL(Expression Language) ì´ëž€?
-	sessionì´ë‚˜ request ë‚´ìž¥ê°ì²´ì— ë“±ë¡ëœ ë°ì´í„°ë¥¼ JSP í™”ë©´ì— ì¶œë ¥í•˜ê¸° ìœ„í•œ í‘œí˜„ì‹
+	EL(Expression Language) ÀÌ¶õ?
+	sessionÀÌ³ª request ³»Àå°´Ã¼¿¡ µî·ÏµÈ µ¥ÀÌÅÍ¸¦ JSP È­¸é¿¡ Ãâ·ÂÇÏ±â À§ÇÑ Ç¥Çö½Ä
 -->
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title><spring:message code="message.board.list.link.detailBoard"/></title>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>±Û »ó¼¼</title>
 </head>
 <body>
 <center>
-<h1><font color="green"><spring:message code="message.board.list.link.detailBoard"/></font></h1>
+<h1><font color="green">±Û »ó¼¼</font></h1>
 <a href="logout.do">Log-out</a>
 <hr>
 <form action="updateBoard.do" method="post">
 <input name="seq" type="hidden" value="${board.seq }"/>
 <table border="1" cellpadding="0" cellspacing="0">
 	<tr>
-		<td bgcolor="orange" width="70"><spring:message code="message.board.list.search.condition.title"/></td>
+		<td bgcolor="orange" width="70">Á¦¸ñ</td>
 		<td align="left"><input name="title" type="text" value="${board.title }"/></td>
 	</tr>
 	<tr>
-		<td bgcolor="orange"><spring:message code="message.board.list.table.head.writer"/></td>
+		<td bgcolor="orange">ÀÛ¼ºÀÚ</td>
 		<td align="left">${board.writer }</td>
 	</tr>
 	<tr>
-		<td bgcolor="orange"><spring:message code="message.board.list.search.condition.content"/></td>
+		<td bgcolor="orange">³»¿ë</td>
 		<td align="left"><textarea name="content" cols="40" rows="10">${board.content }</textarea></td>
 	</tr>
 	<tr>
-		<td bgcolor="orange"><spring:message code="message.board.list.table.head.regDate"/></td>
+		<td bgcolor="orange">µî·ÏÀÏ</td>
 		<td align="left">${board.regDate }</td>
 	</tr>
 	<tr>
-		<td bgcolor="orange"><spring:message code="message.board.list.table.head.cnt"/></td>
+		<td bgcolor="orange">Á¶È¸¼ö</td>
 		<td align="left">${board.cnt }</td>
 	</tr>
 	<tr>
 		<td colspan="2" align="center">
-			<input type="submit" value="<spring:message code="message.board.list.link.modifyBoard"/>"/>
+			<input type="submit" value="±Û ¼öÁ¤"/>
 		</td>
 	</tr>
 </table>
 </form>
 <hr>
-<a href="insertBoard.jsp"><spring:message code="message.board.list.link.insertBoard"/></a>&nbsp;&nbsp;&nbsp;
-<a href="deleteBoard.do?seq=${board.seq }"><spring:message code="message.board.list.link.deleteBoard"/></a>&nbsp;&nbsp;&nbsp;
-<a href="getBoardList.do"><spring:message code="message.board.list.link.showBoard"/></a>
+<a href="insertBoard.jsp">±Ûµî·Ï</a>&nbsp;&nbsp;&nbsp;
+<a href="deleteBoard.do?seq=${board.seq }">±Û»èÁ¦</a>&nbsp;&nbsp;&nbsp;
+<a href="getBoardList.do">±Û¸ñ·Ï</a>
 </center>
 </body>
 </html>

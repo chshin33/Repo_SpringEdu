@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 @Service("boardService")
 public class BoardServiceImpl implements BoardService {
 	@Autowired
-	private BoardDAOMybatis boardDAO; //사용하는 DAO를 바꿈
+	private BoardDAOMybatis boardDAO;
 
 	public void insertBoard(BoardVO vo) {
 		boardDAO.insertBoard(vo);

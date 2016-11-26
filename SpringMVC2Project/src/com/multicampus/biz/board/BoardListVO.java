@@ -11,14 +11,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class BoardListVO {
 	@XmlElement(name="board")
-	private List<BoardVO> boardList;
-	
-	public List<BoardVO> getBoardList(){
+	private List<BoardVO> boardList;	
+
+	public List<BoardVO> getBoardList() {
 		return boardList;
 	}
-	
-	public void setBoardList(List<BoardVO> boardList){
+
+	public void setBoardList(List<BoardVO> boardList) {
 		this.boardList = boardList;
 	}
-
 }

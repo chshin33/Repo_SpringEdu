@@ -13,6 +13,7 @@ import com.multicampus.biz.common.JDBCUtil;
 // 2. DAO(Data Access Object) 클래스
 @Repository
 public class BoardDAO {
+	
 	// JDBC 관련 변수
 	private Connection conn = null;
 	private PreparedStatement stmt = null;
@@ -24,7 +25,10 @@ public class BoardDAO {
 	private final String BOARD_DELETE = "delete board where seq=?";
 	private final String BOARD_GET = "select * from board where seq=?";
 	private final String BOARD_LIST_T = "select * from board where title like '%'||?||'%' order by seq desc";
-	private final String BOARD_LIST_C = "select * from board where content like '%'||?||'%' order by seq desc";
+	private final String BOARD_LIST_C = "select * "
+			                          + "from board "
+			                          + "where content like '%'||?||'%' "
+			                          + "order by seq desc";
 
 	// CRUD 기능 메소드
 	// 글 등록

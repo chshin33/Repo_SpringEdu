@@ -1,6 +1,5 @@
 package com.multicampus.biz.board;
 
-//import java.sql.Date;
 import java.util.Date;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -16,7 +15,6 @@ import org.springframework.web.multipart.MultipartFile;
 public class BoardVO {
 	@XmlAttribute
 	private int seq;
-	
 	private String title;
 	private String writer;
 	private String content;
@@ -33,11 +31,9 @@ public class BoardVO {
 	public MultipartFile getUploadFile() {
 		return uploadFile;
 	}
-	
 	public void setUploadFile(MultipartFile uploadFile) {
 		this.uploadFile = uploadFile;
 	}
-	
 	@JsonIgnore
 	public String getSearchCondition() {
 		return searchCondition;
@@ -45,7 +41,6 @@ public class BoardVO {
 	public void setSearchCondition(String searchCondition) {
 		this.searchCondition = searchCondition;
 	}
-	
 	@JsonIgnore
 	public String getSearchKeyword() {
 		return searchKeyword;

@@ -9,7 +9,6 @@ import org.springframework.stereotype.Repository;
 // 2. DAO(Data Access Object) 클래스
 @Repository
 public class BoardDAOMybatis {
-	
 	@Autowired
 	private SqlSessionTemplate mybatis;
 
@@ -17,21 +16,19 @@ public class BoardDAOMybatis {
 	// 글 등록
 	public void insertBoard(BoardVO vo) {
 		System.out.println("===> Mybatis 기반으로 insertBoard() 기능 처리");
-		mybatis.insert("boardDAO.insertBoard",vo);
+		mybatis.insert("boardDAO.insertBoard", vo);
 	}
 
 	// 글 수정
 	public void updateBoard(BoardVO vo) {
 		System.out.println("===> Mybatis 기반으로 updateBoard() 기능 처리");
-		mybatis.insert("boardDAO.updateBoard",vo);
-
+		mybatis.update("boardDAO.updateBoard", vo);
 	}
 
 	// 글 삭제
 	public void deleteBoard(BoardVO vo) {
 		System.out.println("===> Mybatis 기반으로 deleteBoard() 기능 처리");
-		mybatis.insert("boardDAO.deleteBoard",vo);
-
+		mybatis.delete("boardDAO.deleteBoard", vo);
 	}
 
 	// 글 상세 조회

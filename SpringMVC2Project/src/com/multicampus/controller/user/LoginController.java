@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.multicampus.biz.user.UserDAO;
 import com.multicampus.biz.user.UserService;
 import com.multicampus.biz.user.UserVO;
 
@@ -17,15 +16,13 @@ public class LoginController {
 	
 	@RequestMapping(value="/login.do", method=RequestMethod.GET)
 	public String loginView(@ModelAttribute("user") UserVO vo) {
-		System.out.println("로그인 화면으로 이동");
 		vo.setId("test");
 		vo.setPassword("test");
 		return "login.jsp";
 	}
 	
 	@RequestMapping(value="/login.do", method=RequestMethod.POST)
-	public String login(UserVO vo, UserDAO userDAO) {
-		
+	public String login(UserVO vo) {
 		if(userService.getUser(vo) != null) return "getBoardList.do";
 		else return "login.jsp";
 	}

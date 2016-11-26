@@ -5,14 +5,23 @@
 
 <sqlMap>
 	<typeAlias alias="user" type="com.multicampus.biz.user.UserVO"/>
-
+	
 	<select id="getUser" resultClass="user">
 		<![CDATA[
 		select * 
-		from users
-		where id = #id#
-		and password = #password#
-		]]>
-	</select>
-	
+		from users 
+		where id = #id# 
+		  and password = #password#
+		]]>		
+	</select>	
+		
 </sqlMap>
+
+
+
+
+
+
+
+
+

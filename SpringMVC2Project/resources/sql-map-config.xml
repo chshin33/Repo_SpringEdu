@@ -8,3 +8,11 @@
 	<sqlMap resource="mappings/board-mapping.xml"/>
 	<sqlMap resource="mappings/user-mapping.xml"/>
 </sqlMapConfig>
+
+
+
+
+
+
+
+

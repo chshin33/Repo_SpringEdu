@@ -1,24 +1,25 @@
-<%@page contentType="text/html; charset=UTF-8"%>
+<%@page contentType="text/html; charset=EUC-KR"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring" %>
-<!-- 
-	JSTL(JSP Standard Tag Library)ì´ëž€?
-	JSP íŒŒì¼ì—ì„œ for, if, switch ë“±ê³¼ ê°™ì€ ìžë°” ì½”ë“œë¥¼ ëŒ€ì²´í•˜ëŠ” í‘œì¤€ íƒœê·¸
--->
 
+<!-- 
+	JSTL(JSP Standard Tag Library)
+	JSP ÆäÀÌÁö¿¡¼­ if, for, switch µî°ú °°Àº ÀÚ¹Ù ÄÚµå¸¦ ´ëÃ¼ÇÏ´Â Ç¥ÁØ ¾×¼Ç ÅÂ±×
+-->
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title><spring:message code="message.board.list.mainTitle"/></title>
 </head>
 <body>
 <center>
-<h1><font color="green"><spring:message code="message.board.list.mainTitle"/></font></h1>
-<h3>í…ŒìŠ¤íŠ¸${usernameis }<spring:message code="message.board.list.welcomeMsg"/><a href="logout.do">Log-out</a></h3><!--ë‹˜ í™˜ê²½í•©ë‹ˆë‹¤....-->
+<h1><spring:message code="message.board.list.mainTitle"/></h1>
+<h3><font color="green">[Å×½ºÆ®]</font><spring:message code="message.board.list.welcomeMsg"/>......
+<a href="logout.do">Log-out</a></h3>
 
-<!-- ê²€ìƒ‰ ì‹œìž‘ -->
+<!-- °Ë»ö ½ÃÀÛ -->
 <form action="getBoardList.do" method="post">
 	<table border="1" cellpadding="0" cellspacing="0" width="700">
 	<tr>
@@ -33,15 +34,15 @@
 	</tr>
 	</table>
 </form>
-<!-- ê²€ìƒ‰ ì¢…ë£Œ -->
+<!-- °Ë»ö Á¾·á -->
 
 <table border="1" cellpadding="0" cellspacing="0" width="700">
 <tr>
-	<th bgcolor="orange" width="100"><spring:message code="message.board.list.table.head.seq"/><!--ìˆœë²ˆ--></th>
-	<th bgcolor="orange" width="200"><spring:message code="message.board.list.table.head.title"/><!--ì œëª©--></th>
-	<th bgcolor="orange" width="150"><spring:message code="message.board.list.table.head.writer"/><!--ìž‘ì„±ìž--></th>
-	<th bgcolor="orange" width="150"><spring:message code="message.board.list.table.head.regDate"/><!--ë“±ë¡ì¼--></th>
-	<th bgcolor="orange" width="100"><spring:message code="message.board.list.table.head.cnt"/><!--ì¡°íšŒìˆ˜--></th>
+	<th bgcolor="orange" width="100"><spring:message code="message.board.list.table.head.seq"/></th>
+	<th bgcolor="orange" width="200"><spring:message code="message.board.list.table.head.title"/></th>
+	<th bgcolor="orange" width="150"><spring:message code="message.board.list.table.head.writer"/></th>
+	<th bgcolor="orange" width="150"><spring:message code="message.board.list.table.head.regDate"/></th>
+	<th bgcolor="orange" width="100"><spring:message code="message.board.list.table.head.cnt"/></th>
 </tr>
 
 <c:forEach var="board" items="${boardList }">
