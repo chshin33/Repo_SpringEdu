@@ -11,18 +11,7 @@ public class BoardServiceImpl implements BoardService {
 	@Autowired
 	private BoardDAOSpring boardDAO;
 
-//	public BoardServiceImpl(BoardDAO boardDAO) {
-//		super();
-//		this.boardDAO = boardDAO;
-//	}
-
-//	public void setBoardDAO(BoardDAO boardDAO) {
-//		this.boardDAO = boardDAO;
-//	}
-
 	public void insertBoard(BoardVO vo) {
-//		System.out.println(9/0);
-		//boardDAO.insertBoard(vo);
 		boardDAO.insertBoard(vo);
 	}
 

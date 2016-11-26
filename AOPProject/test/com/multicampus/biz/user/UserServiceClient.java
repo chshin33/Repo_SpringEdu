@@ -13,11 +13,10 @@ public class UserServiceClient {
 		
 		// 3. Lookup한 객체 테스트
 		UserVO vo = new UserVO();
-		vo.setId("test");
-		vo.setPassword("test");
+		vo.setId("aaa");
+		vo.setPassword("aaa");
 		
 		UserVO user = userService.getUser(vo);
-		
 		if(user != null) {
 			System.out.println(user.getName() + "님 환영합니다.");
 		} else {

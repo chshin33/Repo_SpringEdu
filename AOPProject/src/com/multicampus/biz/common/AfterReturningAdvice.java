@@ -3,7 +3,6 @@ package com.multicampus.biz.common;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Pointcut;
 import org.springframework.stereotype.Service;
 
 import com.multicampus.biz.user.UserVO;
@@ -11,8 +10,6 @@ import com.multicampus.biz.user.UserVO;
 @Service
 @Aspect
 public class AfterReturningAdvice {
-	
-	public void getPointcut() {}	
 
 	@AfterReturning(pointcut="PointcutCommon.getPointcut()", returning="returnObj")
 	public void afterLog(JoinPoint jp, Object returnObj) {

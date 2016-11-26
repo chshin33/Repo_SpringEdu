@@ -3,17 +3,13 @@ package com.multicampus.biz.common;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Pointcut;
-import org.springframework.stereotype.Service;
 
-@Service
+//@Service
 @Aspect
-public class AroundAdvice {
-	
-	public void allPointcut(){}
+public class AroundAdvice {      
 	
 	@Around("PointcutCommon.allPointcut()")
-	public Object aroundLog(ProceedingJoinPoint pjp) throws Throwable {		
+	public Object aroundLog(ProceedingJoinPoint pjp) throws Throwable {
 		String method = pjp.getSignature().getName();
 		Object obj = null;
 		
@@ -21,9 +17,13 @@ public class AroundAdvice {
 		obj = pjp.proceed();		
 		long end = System.currentTimeMillis();
 		
-		System.out.println(method + " 비즈니스 메소드 수행에 걸린 시간 : " + 
-		(end - start) + "(ms)초");
-		
+		System.out.println(method + "() 메소드 수행에 걸린 시간 : " + 
+		(end - start) + "(ms)초");		
 		return obj;
 	}
 }
+
+
+
+
+

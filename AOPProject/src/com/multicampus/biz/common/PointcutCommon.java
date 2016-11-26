@@ -17,3 +17,7 @@ public class PointcutCommon {
 	@Pointcut("execution(* com.multicampus.biz.user.*Impl.*(..))")
 	public void userPointcut() {}	
 }
+
+
+
+

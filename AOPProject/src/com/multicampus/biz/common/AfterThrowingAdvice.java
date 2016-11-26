@@ -3,14 +3,10 @@ package com.multicampus.biz.common;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterThrowing;
 import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Pointcut;
-import org.springframework.stereotype.Service;
 
-@Service
+//@Service
 @Aspect
 public class AfterThrowingAdvice {
-	
-	public void allPointcut() {}	
 
 	@AfterThrowing(pointcut="PointcutCommon.allPointcut()", throwing="exceptObj")
 	public void exceptionLog(JoinPoint jp, Exception exceptObj) {
